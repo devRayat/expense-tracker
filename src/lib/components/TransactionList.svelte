@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { transactionStore } from '$lib/stores/transaction'
+	import { slide } from 'svelte/transition'
 </script>
 
 <h3>History</h3>
@@ -10,6 +11,7 @@
 			class="group bg-white shadow-primary text-gray-700 flex justify-between relative p-3 my-3 mx-0 border-r-8 border-solid"
 			class:border-income={amount >= 0}
 			class:border-expense={amount < 0}
+			transition:slide={{ duration: 200 }}
 		>
 			{text} <span>{amount >= 0 ? '+' : '-'}${Math.abs(amount).toFixed(2)}</span>
 			<button

@@ -1,6 +1,7 @@
 import type { Transaction } from '$lib/types/transaction'
 import { nanoid } from '$lib/utils/nanoid'
-import { derived, Writable, writable } from 'svelte/store'
+import { derived, writable } from 'svelte/store'
+import type { Writable } from 'svelte/store'
 
 const dummyTransactions = [
 	{ id: '1', text: 'Flower', amount: -20 },
