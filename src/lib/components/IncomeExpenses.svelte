@@ -1,20 +1,8 @@
 <script lang="ts">
-	import { transactionStore } from '$lib/stores/transaction'
+	import { total } from '$lib/stores/transaction'
 
 	const moneyClass = 'text-xl tracking-wider my-1 mx-0'
 	const divClass = 'flex-1 text-center'
-
-	$: amounts = $transactionStore.map(trx => trx.amount)
-
-	$: income = amounts
-		.filter(item => item > 0)
-		.reduce((acc, item) => (acc += item), 0)
-		.toFixed(2)
-
-	$: expense = amounts
-		.filter(item => item < 0)
-		.reduce((acc, item) => (acc -= item), 0)
-		.toFixed(2)
 </script>
 
 <div
@@ -22,10 +10,10 @@
 >
 	<div class={divClass}>
 		<h4>Income</h4>
-		<p id="money-plus" class="{moneyClass} text-[#2ecc71]">{income}</p>
+		<p class="{moneyClass} text-income">{$total.income}</p>
 	</div>
 	<div class={divClass}>
 		<h4>Expense</h4>
-		<p id="money-minus" class="{moneyClass} text-[#c0392b]">{expense}</p>
+		<p class="{moneyClass} text-expense">{$total.expense}</p>
 	</div>
 </div>

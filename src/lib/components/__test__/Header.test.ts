@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, fireEvent, screen } from '@testing-library/svelte'
+import { render, screen } from '@testing-library/svelte'
 
 import Header from '../Header.svelte'
 

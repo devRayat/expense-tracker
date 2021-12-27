@@ -3,21 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-    label {
-        @apply inline-block my-3 mx-0;
-    }
+	label {
+		@apply inline-block my-3 mx-0;
+	}
 
 	input[type='text'],
 	input[type='number'] {
 		@apply border border-solid border-gray-300 rounded-sm block text-base p-3 w-full;
 	}
-}
-
-@layer components {
-	.plus {
-		@apply border-[#2ecc71];
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
 	}
-	.minus {
-		@apply border-[#c0392b];
+
+	/* Firefox */
+	input[type='number'] {
+		-moz-appearance: textfield;
 	}
 }

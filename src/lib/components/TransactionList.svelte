@@ -7,9 +7,9 @@
 <ul id="list" class="list-none p-0 mb-10">
 	{#each $transactionStore as { id, text, amount } (id)}
 		<li
-			class="group bg-white shadow-primary text-gray-800 flex justify-between relative p-3 my-3 mx-0 border-r-8 border-solid"
-			class:plus={amount >= 0}
-			class:minus={amount < 0}
+			class="group bg-white shadow-primary text-gray-700 flex justify-between relative p-3 my-3 mx-0 border-r-8 border-solid"
+			class:border-income={amount >= 0}
+			class:border-expense={amount < 0}
 		>
 			{text} <span>{amount >= 0 ? '+' : '-'}${Math.abs(amount).toFixed(2)}</span>
 			<button
