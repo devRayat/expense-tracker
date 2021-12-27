@@ -13,5 +13,8 @@ module.exports = {
 	moduleFileExtensions: ['js', 'ts', 'svelte'],
 	preset: 'ts-jest',
 	setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
-	testEnvironment: 'jsdom'
+	testEnvironment: 'jsdom',
+	moduleNameMapper: {
+		'^\\$lib\\/(.*)': '<rootDir>/src/lib/$1'
+	}
 }
